@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>ELEMENTOR</title>
+        <link rel="stylesheet" href="./elementorCSS-canvas.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <section id="seleccionar-mascota">
+            <h1 class="titulo">ELEMENTOR</h1>
+            <h2 class="subtitulo">Choose your Elementor</h2>
+
+            <div id= "contenedorTarjetas" class="tarjetas"></div>
+
+            <button id="boton-elementor">FIGHT!!!</button>
+
+        </section>
+
+        <section id="ver-mapa">
+            <h2 id="titulo-canvas">Recorre el mapa</h2>
+            <canvas id="mapa"></canvas>
+                <button id = "up" onmouseup="detenerMovimiento()" onmousedown="moverUp()">⬆☝</button>
+                <div>
+                    <button id = "left" onmouseup="detenerMovimiento()" onmousedown="moverLeft()">⬅👈</button>
+                    <button id = "down" onmouseup="detenerMovimiento()" onmousedown="moverDown()">⬇👇</button>
+                    <button id = "right" onmouseup="detenerMovimiento()" onmousedown="moverRight()">➡👉</button>
+                </div>
+            
+        </section>
+
+        <section id="seleccionar-ataque">    
+            <h1 class="titulo">ELEMENTOR</h1>
+            <h2 class="subtitulo">Choose your atack</h2>
+              
+            <div id="contenedorAtaques"></div>
+            
+            <div id="contenedor-resultado-final">
+                <div id="resultado-final">
+                    <section id="reset">
+                        <button id="boton-reiniciar">PLAY AGAIN</button>
+                    </section>
+                </div>
+                
+               <!--<p id="result">💀GOD ENDS HERE💀</p> -->                
+            </div>
+            <div class="info-inferior">
+                <div class="juego">
+                    <p><span id="victorias-jugador">0</span> victories</p>
+                    <p id="elementor-jugador"></p>
+                    <div id="player-attack"></div>
+                </div>
+
+                <div class="juego">
+                    <p><span id="victorias-rival">0</span> victories</p>
+                    <p id="elementor-rival"></p>
+                    <div id="enemy-attack"></div>
+                </div>
+            </div>  
+        </section>
+        <script defer src="./elementorJS-canvas.js"></script>
+    </body>
+</html>
