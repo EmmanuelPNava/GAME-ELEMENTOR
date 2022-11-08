@@ -212,13 +212,12 @@ function iniciarJuego() {
 
     botonElementor.addEventListener("click", seleccionarElementorJugador)
     
-    unirseAlJuego()
+    //unirseAlJuego()
 }
 
 function unirseAlJuego() {
     fetch("http://localhost:8080/unirse")
         .then(function (res) {
-            .catch(console.log)
             if(res.ok) {
                 res.text()
                     .then(function (respuesta) {
