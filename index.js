@@ -35,7 +35,7 @@ app.get("/unirse", (req,res) => {
     const jugador = new Jugador(id)
     jugadores.push(jugador)
 
-    res.setHeader("Access-Control-Allow-Origin", "*")
+    //res.setHeader("Access-Control-Allow-Origin", "*")
 
     res.send(id)
 })
@@ -55,6 +55,8 @@ app.post("/elementor/:jugadorId", (req, res) => {
     res.end()
 })
 
+
+
 app.post("/elementor/:jugadorId/posicion", (req,res) => {
     const jugadorId = req.params.jugadorId || ""
     const x = req.body.x || 0
@@ -72,6 +74,6 @@ app.post("/elementor/:jugadorId/posicion", (req,res) => {
     })
 })
 
-app.listen(8080, () => {
+app.listen(5000, () => {
     console.log("Servidor funcionando");
 })

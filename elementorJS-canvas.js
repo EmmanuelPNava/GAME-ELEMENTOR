@@ -212,11 +212,11 @@ function iniciarJuego() {
 
     botonElementor.addEventListener("click", seleccionarElementorJugador)
     
-    //unirseAlJuego()
+    unirseAlJuego()
 }
 
 function unirseAlJuego() {
-    fetch("http://localhost:8080/unirse")
+    fetch("http://localhost:5000/unirse")
         .then(function (res) {
             if(res.ok) {
                 res.text()
@@ -225,6 +225,8 @@ function unirseAlJuego() {
                         jugadorId = respuesta
                     })
             }
+        }) .catch ((err) => {
+            console.log(err);
         })
 }
 
@@ -268,7 +270,7 @@ function seleccionarElementorJugador() {
 }
 
 function seleccionarElementor(elementorJugador) {
-    fetch(`http://localhost:8080/elementor/${jugadorId}`, {
+    fetch(`http://localhost:5000/elementor/${jugadorId}`, {
         method:"post",
         headers : {
             "Content-Type": "application/json"
@@ -372,7 +374,7 @@ function mostarCanvas() {
 }
 
 function enviarPosicion(x, y) {
-    fetch(`http://localhost:8080/elementor/${jugadorId}/posicion`, {
+    fetch(`http://localhost:5000/elementor/${jugadorId}/posicion`, {
         method: "post",
         headers : {
             "Content-Type": "application/json"
